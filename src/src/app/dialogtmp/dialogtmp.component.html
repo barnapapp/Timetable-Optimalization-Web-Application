@@ -1,0 +1,62 @@
+
+    <form [formGroup]="trainerForm" (ngSubmit)="submit()">
+        <mat-form-field class="example-full-width" >
+            <input type="number" matInput placeholder="Segítőkészség" formControlName="segitokeszseg" value="" min="0" max="10" >
+            <mat-error *ngIf="segitokeszseg?.errors?.['required']">
+                Segitokeszseg is required
+            </mat-error>
+            <mat-error *ngIf="segitokeszseg?.errors?.['min']">
+                Segitokeszseg is at least 0
+            </mat-error>
+            <mat-error *ngIf="segitokeszseg?.errors?.['max']">
+                Segitokeszseg is at most 10
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" >
+            <input type="number" matInput placeholder="Felkészűltség" formControlName="felkeszultseg" value="" min="0" max="10" >
+            <mat-error *ngIf="felkeszultseg?.errors?.['required']">
+                Felkeszultseg is required
+            </mat-error>
+            <mat-error *ngIf="felkeszultseg?.errors?.['min']">
+                Felkeszultseg is at least 0
+            </mat-error>
+            <mat-error *ngIf="felkeszultseg?.errors?.['max']">
+                Felkeszultseg is at most 10
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" >
+            <input type="text" matInput placeholder="Név" formControlName="nev" value="" required minlength="4">
+           <mat-error *ngIf="nev?.errors?.['required']">
+            Name is required
+           </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" >
+            <input type="number" matInput placeholder="Előadásmód" formControlName="eloadasmod" value="" min="0" max="10" >
+            <mat-error *ngIf="eloadasmod?.errors?.['required']">
+                Előadásmód is required
+            </mat-error>
+            <mat-error *ngIf="eloadasmod?.errors?.['min']">
+                Előadásmód is at least 0
+            </mat-error>
+            <mat-error *ngIf="eloadasmod?.errors?.['max']">
+                Előadásmód is at most 10
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width kov_width" >
+            <input type="number" matInput placeholder="Követelmények teljesíthetősége" formControlName="teljesithetoseg" value="" min="0" max="10" >
+            <mat-error *ngIf="teljesithetoseg?.errors?.['required']">
+                Teljesíthetőség is required
+            </mat-error>
+            <mat-error *ngIf="teljesithetoseg?.errors?.['min']">
+                Teljesíthetőség is at least 0
+            </mat-error>
+            <mat-error *ngIf="teljesithetoseg?.errors?.['max']">
+                Teljesíthetőség is at most 10
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button class="button-style" color="primary" type="submit">Change</button>
+    </form>
+
+
+

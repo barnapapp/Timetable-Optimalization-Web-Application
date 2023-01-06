@@ -1,0 +1,118 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title *ngIf="registerGroup; else loginHeader">Register</mat-card-title>
+    <mat-card-subtitle>TimeTable</mat-card-subtitle>
+    <ng-template #loginHeader>
+      Sign in
+    </ng-template>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <!-- animationDuration="0ms" -->
+      <!-- alább mat-errors helyett div szintén jó -->
+
+      <mat-tab [formGroup]="registerGroup" label="Register">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput placeholder="Email" value="" formControlName="registrationEmail">
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf="registrationEmail?.invalid && (registrationEmail?.dirty || registrationEmail?.touched)"
+            class="alert alert-danger">
+            <ng-container *ngIf="registrationEmail?.errors?.['required']">
+              Email address is required.
+            </ng-container>
+            <ng-container *ngIf="registrationEmail?.errors?.['email']">
+              Email address must be formatted correctly.
+            </ng-container>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>First name</mat-label>
+          <input type="" matInput placeholder="Firstname" value="" formControlName="registrationFirstName">
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error
+            *ngIf="registrationFirstName?.invalid && (registrationFirstName?.dirty || registrationFirstName?.touched)"
+            class="alert alert-danger">
+            <ng-container *ngIf="registrationFirstName?.errors?.['required']">
+              First name is required.
+            </ng-container>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Last name</mat-label>
+          <input type="" matInput placeholder="Lastname" value="" formControlName="registrationLastName">
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error
+            *ngIf="registrationLastName?.invalid && (registrationLastName?.dirty || registrationLastName?.touched)"
+            class="alert alert-danger">
+            <ng-container *ngIf="registrationLastName?.errors?.['required']">
+              Last name is required.
+            </ng-container>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="Password" formControlName="registrationPassword">
+          <mat-icon matSuffix>vpn_key</mat-icon>
+        </mat-form-field>
+        <!-- hasError('required', 'registrationPassword') -->
+        <mat-error *ngIf="registerGroup.hasError('required')" class="alert alert-danger">
+          Password is required.
+        </mat-error>
+        <mat-form-field class="example-full-width">
+          <mat-label>Confirm Password</mat-label>
+          <input type="password" matInput placeholder="Confirm Password" formControlName="registrationConfirmPassword">
+          <mat-icon matSuffix>vpn_key</mat-icon>
+        </mat-form-field>
+        <mat-error *ngIf="registerGroup.hasError('notSame')" class="alert alert-danger">
+          Passwords do not match.
+        </mat-error>
+        <mat-error
+          *ngIf="registrationConfirmPassword?.invalid && (registrationConfirmPassword?.dirty || registrationConfirmPassword?.touched)"
+          class="alert alert-danger">
+          <ng-container *ngIf="registrationConfirmPassword?.errors?.['required']">
+            Password confirmation is required.
+          </ng-container>
+        </mat-error>
+        <button mat-raised-button class="button-style" color="primary" (click)="register()"
+          [disabled]="registerGroup.invalid">Register</button>
+      </mat-tab>
+
+      <mat-tab [formGroup]="loginGroup" label="Sign in">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput placeholder="Email" value="" formControlName="loginEmail">
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf="loginEmail?.invalid && (loginEmail?.dirty || loginEmail?.touched)"
+            class="alert alert-danger">
+            <ng-container *ngIf="loginEmail?.errors?.['required']">
+              Email address is required.
+            </ng-container>
+            <ng-container *ngIf="loginEmail?.errors?.['email']">
+              Email address must be formatted correctly.
+            </ng-container>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="Password" formControlName="loginPassword">
+          <mat-icon matSuffix>vpn_key</mat-icon>
+          <mat-error *ngIf="loginPassword?.invalid && (loginPassword?.dirty || loginPassword?.touched)"
+            class="alert alert-danger">
+            <ng-container *ngIf="loginPassword?.errors?.['required']">
+              Password is required.
+            </ng-container>
+            <ng-container *ngIf="loginPassword?.errors?.['pattern']">
+              Password must be mininum 4 characters long.<br>
+              Password must contain at least <b>one uppercase</b> letter, <b>one lowercase</b>
+              letter, <b>one number</b> and <b>one special character.</b>
+            </ng-container>
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button class="button-style" color="primary" (click)="login()"
+          [disabled]="loginGroup.invalid">Sign in</button>
+      </mat-tab>
+
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>

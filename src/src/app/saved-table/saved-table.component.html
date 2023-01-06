@@ -1,0 +1,108 @@
+<div class="table">
+  <div class="header_table">Felvett órarend: </div>
+    <table>
+      <thead>
+        <td>Idő</td>
+        <td>Hétfő</td>
+        <td>Kedd</td>
+        <td>Szerda</td>
+        <td>Csütörtök</td>
+        <td>Péntek</td>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of dataMap | keyvalue">
+          <ng-container *ngIf="item.key != 'undefined'">
+            <td>{{ item.key }}</td>
+            <td
+              [ngClass]="{
+                easyLevel: item.value.hetfo.goodness_index <= 2,
+                easyMiddleLevel: item.value.hetfo.goodness_index > 2 && item.value.hetfo.goodness_index <= 3,
+                highLevel: item.value.hetfo.goodness_index > 4,
+                highMiddleLevel: item.value.hetfo.goodness_index > 3 && item.value.hetfo.goodness_index <= 4,
+                emptyCell: item.value.hetfo.goodness_index == null
+              }"
+              [matTooltip]="'Josagi faktor: ' + item.value.hetfo.goodness_index + '\n' +
+                            'Hasznossag: ' + item.value.hetfo.hasznossag + '\n' +
+                            'Nehezseg: ' + item.value.hetfo.nehezseg + '\n' +
+                            'Tipus: ' + item.value.hetfo.tipus"
+              [matTooltipDisabled]="item.value.hetfo.goodness_index == undefined"
+              matTooltipClass="my-tooltip"
+            >
+              {{ item.value.hetfo.nev }}
+            </td>
+            <td
+              [ngClass]="{
+                easyLevel: item.value.kedd.goodness_index <= 2,
+                easyMiddleLevel: item.value.kedd.goodness_index > 2 && item.value.kedd.goodness_index <= 3,
+                highLevel: item.value.kedd.goodness_index > 4,
+                highMiddleLevel: item.value.kedd.goodness_index > 3 && item.value.kedd.goodness_index <= 4,
+                emptyCell: item.value.kedd.goodness_index == null
+              }"
+              [matTooltip]="'Josagi faktor: ' + item.value.kedd.goodness_index + '\n' +
+                            'Hasznossag: ' + item.value.kedd.hasznossag + '\n' +
+                            'Nehezseg: ' + item.value.kedd.nehezseg + '\n' +
+                            'Tipus: ' + item.value.kedd.tipus"
+              [matTooltipDisabled]="item.value.kedd.goodness_index == undefined"
+              matTooltipClass="my-tooltip"
+            >
+              {{ item.value.kedd.nev }}
+            </td>
+            <td
+              [ngClass]="{
+                easyLevel: item.value.szerda.goodness_index <= 2,
+                easyMiddleLevel: item.value.szerda.goodness_index > 2 && item.value.szerda.goodness_index <= 3,
+                highLevel: item.value.szerda.goodness_index > 4,
+                highMiddleLevel: item.value.szerda.goodness_index > 3 && item.value.szerda.goodness_index <= 4,
+                emptyCell: item.value.szerda.goodness_index == null
+              }"
+              [matTooltip]="'Josagi faktor: ' + item.value.szerda.goodness_index + '\n' +
+                            'Hasznossag: ' + item.value.szerda.hasznossag + '\n' +
+                            'Nehezseg: ' + item.value.szerda.nehezseg + '\n' +
+                            'Tipus: ' + item.value.szerda.tipus"
+              [matTooltipDisabled]="item.value.szerda.goodness_index == undefined"
+              matTooltipClass="my-tooltip"
+            >
+              {{ item.value.szerda.nev }}
+            </td>
+            <td
+              [ngClass]="{
+                easyLevel: item.value.csutortok.goodness_index <= 2,
+                easyMiddleLevel: item.value.csutortok.goodness_index > 2 && item.value.csutortok.goodness_index <= 3,
+                highLevel: item.value.csutortok.goodness_index > 4,
+                highMiddleLevel: item.value.csutortok.goodness_index > 3 && item.value.csutortok.goodness_index <= 4,
+                emptyCell: item.value.csutortok.goodness_index == null
+              }"
+              [matTooltip]="'Josagi faktor: ' + item.value.csutortok.goodness_index + '\n' +
+                            'Hasznossag: ' + item.value.csutortok.hasznossag + '\n' +
+                            'Nehezseg: ' + item.value.csutortok.nehezseg + '\n' +
+                            'Tipus: ' + item.value.csutortok.tipus"
+              [matTooltipDisabled]="item.value.csutortok.goodness_index == undefined"
+              matTooltipClass="my-tooltip"
+            >
+              {{ item.value.csutortok.nev }}
+            </td>
+            <td
+              [ngClass]="{
+                easyLevel: item.value.pentek.goodness_index <= 2,
+                easyMiddleLevel: item.value.pentek.goodness_index > 2 && item.value.pentek.goodness_index <= 3,
+                highLevel: item.value.pentek.goodness_index > 4,
+                highMiddleLevel: item.value.pentek.goodness_index > 3 && item.value.pentek.goodness_index <= 4,
+                emptyCell: item.value.pentek.goodness_index == null
+              }"
+              [matTooltip]="'Josagi faktor: ' + item.value.pentek.goodness_index + '\n' +
+                            'Hasznossag: ' + item.value.pentek.hasznossag + '\n' +
+                            'Nehezseg: ' + item.value.pentek.nehezseg + '\n' +
+                            'Tipus: ' + item.value.pentek.tipus"
+              [matTooltipDisabled]="item.value.pentek.goodness_index == undefined"
+              matTooltipClass="my-tooltip"
+            >
+              {{ item.value.pentek.nev }}
+            </td>
+        </ng-container>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button class="buttons_delete" (click)="delete_table()" >Delete</button>
+    </div>
+  </div>

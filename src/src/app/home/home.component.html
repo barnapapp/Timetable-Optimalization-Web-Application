@@ -1,0 +1,67 @@
+
+<mat-card>
+  <div class="sz_t">{{ 'HOME.SUBJECT_ASSESSMENTS' | translate }}</div>
+  <div class="sz_o">{{ 'HOME.TEACHER_ASSESSMENTS' | translate }}</div>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      {{ 'HOME.BEST_RATED_SUBJECT' | translate }} {{best_subject}} ({{max_index}})<br>
+      {{ 'HOME.WORST_RATED_SUBJECT' | translate }} {{worst_subject}} ({{min_index}})
+    </mat-grid-tile>
+    <mat-grid-tile>
+      {{ 'HOME.BEST_RATED_TEACHER' | translate }} {{best_trainer}} ({{max_index2}}) <br>
+      {{ 'HOME.BEST_RATED_TEACHER' | translate }} {{worst_trainer}} ({{min_index2}})
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th>{{ 'HOME.TYPE' | translate }}</th>
+        <th>{{ 'HOME.UTILITY' | translate }}</th>
+        <th>{{ 'HOME.DIFFICULTY' | translate }}</th>
+        <th>{{ 'HOME.GOODNESS_FACTOR' | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr [ngClass]="{'better-index': better_index_value == avg_goodness}">
+        <td>{{ 'HOME.OPTIONAL_SUBJECT' | translate }}</td>
+        <td class="tocent">{{avg_hasznossag}}</td>
+        <td class="tocent"> {{avg_nehezseg}}</td>
+        <td class="tocent"> {{avg_goodness}}</td>
+      </tr>
+      <tr [ngClass]="{'better-index': better_index_value == avg_goodness_kotval}">
+        <td>{{ 'HOME.COMPULSORY_ELECTIVE_SUBJECT' | translate }}</td>
+        <td class="tocent">{{avg_hasznossag_kotval}}</td>
+        <td class="tocent"> {{avg_nehezseg_kotval}}</td>
+        <td class="tocent">{{avg_goodness_kotval}}</td>
+      </tr>
+      <tr [ngClass]="{'better-index': better_index_value == avg_goodness_kot}">
+        <td>{{ 'HOME.COMPULSORY' | translate }}</td>
+        <td class="tocent">{{avg_hasznossag_kot}}</td>
+        <td class="tocent">{{avg_nehezseg_kot}}</td>
+        <td class="tocent">{{avg_goodness_kot}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th>{{ 'HOME.DELIVERY' | translate }}</th>
+        <th>{{ 'HOME.PREPAREDNESS' | translate }}</th>
+        <th>{{ 'HOME.HELPFULNESS' | translate }}</th>
+        <th>{{ 'HOME.FEASIBILITY' | translate }}</th>
+        <th>{{ 'HOME.GOODNESS_FACTOR' | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tocent">{{avg_eloadasmo}}</td>
+        <td class="tocent">{{avg_felkeszultseg}}</td>
+        <td class="tocent">{{avg_segitokeszseg}}</td>
+        <td class="tocent">{{avg_teljesithetoseg}}</td>
+        <td class="tocent">{{avg_goodness_okt}}</td>
+      </tr>
+    </tbody>
+  </table>
+</mat-card>

@@ -1,0 +1,47 @@
+<mat-toolbar>
+    <span>{{ 'HOME.TITLE' | translate }}</span>
+    <div class="auto-width">
+        <mat-select [value]="translate.currentLang" #selectedLang (selectionChange)="switchLanguage(selectedLang.value)"
+            panelClass="languagePanelClass">
+            <!-- <mat-select-trigger>
+          <img width="16" src="{{ language.imgUrl }}" />
+          {{ language.name }}
+        </mat-select-trigger> -->
+            <mat-option *ngFor="let language of languages" [value]="language.code">
+                <img class="country-flag" alt="flag" [src]="language.imgUrl"> &#xA0;
+                {{ translateSelectLanguage(language.code) | translate }}
+            </mat-option>
+        </mat-select>
+    </div>
+    <div class="spacer"></div>
+    <a mat-button routerLink='/myHome'>Home</a>
+    <!--*ngIf="username != undefined; else Login"-->
+    <button *ngIf="username != undefined; else Login" mat-button [matMenuTriggerFor]=" servicesMenu">
+        Services<mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #servicesMenu="matMenu">
+        <!--xPosition="before"-->
+        <mat-button mat-menu-item routerLink='/myCreate'>Órarend szerkesztés</mat-button>
+        <mat-button mat-menu-item routerLink='/generate'>Órarend generálás</mat-button>
+    </mat-menu>
+    <a mat-button routerLink='/myAdmin' *ngIf="seeadmin">Admin</a>
+    <ng-container *ngIf="username == undefined; else other_choose">
+        <a mat-button routerLink='/mySignUp'
+            style="background: rgba(202, 226, 255, .4); border: solid 0.5px lightgrey; border-radius: 8px;">Sign
+            up</a> <!-- Sign up/Sign Up -->
+    </ng-container>
+    <ng-template #Login>
+        <a mat-button routerLink='/myLogin'>Login</a> <!-- Sign in/Sign In -->
+    </ng-template>
+    <ng-template #other_choose>
+        <div class="dropdown">
+            <a mat-button>
+                <mat-icon>account_circle</mat-icon>
+            </a>
+            <div class="dropdown-content">
+                <a mat-button routerLink='/myProfil'>{{username}}</a>
+                <a mat-button routerLink='/myLogin' (click)="double_chekker()">Logout</a>
+            </div>
+        </div>
+    </ng-template>
+</mat-toolbar>

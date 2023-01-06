@@ -1,0 +1,257 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Órarend szerkesztése</mat-card-title>
+    <mat-card-subtitle>TimeTable</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="parent_wrapper">
+      <!-- <mat-tab-group mat-align-tabs="center"> -->
+      <mat-tab-group dynamicHeight mat-stretch-tabs animationDuration="1000ms"
+        (selectedTabChange)="selectedTabValue($event)">
+        <mat-tab label="Kötelező">
+          <form class="example-form alternative_color targy_skin">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Tantárgy</mat-label>
+              <div class="index">
+                <input type="text" placeholder="Kérlek válassz egy tantárgyat" matInput [formControl]="myControl"
+                  [matAutocomplete]="auto">
+              </div>
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option.nev_sub">
+                  {{option.nev_sub}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+            <mat-card>
+              <mat-list role="list" class="center_list">
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item matLine class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy hasznossága:</span>
+                    <span style="float:right">{{choosed.hasznossag}} {{max_value_tantagy[0]}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy nehézsége:</span>
+                    <span style="float:right">{{choosed.nehezseg}} {{max_value_tantagy[1]}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy kreditje:</span>
+                    <span style="float:right">{{choosed.kredit}} {{max_value_tantagy[2]}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy jósági faktora:</span>
+                    <span style="float:right">{{choosed.goodness_index}} {{max_value_tantagy[3]}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy megtartási napja:</span>
+                    <span style="float:right">{{choosed.nap}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy kezdő időpontja:</span>
+                    <span style="float:right">{{choosed.kido}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy vég időpontja:</span>
+                    <span style="float:right">{{choosed.vido}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+              </mat-list>
+            </mat-card>
+          </form>
+        </mat-tab>
+        <mat-tab label="Kötelezően választható">
+          <form class="example-form alternative_color targy_skin">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Tantárgy</mat-label>
+              <div class="index">
+                <input type="text" placeholder="Kérlek válassz egy tantárgyat" matInput [formControl]="myControl"
+                  [matAutocomplete]="auto">
+              </div>
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option.nev_sub">
+                  {{option.nev_sub}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+            <mat-card>
+              <mat-list role="list">
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item matLine class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy hasznossága:</span>
+                    <span style="float:right">{{choosed.hasznossag}} {{max_value_tantagy[0]}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy nehézsége:</span>
+                    <span style="float:right">{{choosed.nehezseg}} {{max_value_tantagy[1]}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy kreditje:</span>
+                    <span style="float:right">{{choosed.kredit}} {{max_value_tantagy[2]}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy jósági faktora:</span>
+                    <span style="float:right">{{choosed.goodness_index}} {{max_value_tantagy[3]}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy megtartási napja:</span>
+                    <span style="float:right">{{choosed.nap}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy kezdő időpontja:</span>
+                    <span style="float:right">{{choosed.kido}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy vég időpontja:</span>
+                    <span style="float:right">{{choosed.vido}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+              </mat-list>
+            </mat-card>
+          </form>
+        </mat-tab>
+        <mat-tab label="Szabadon választható">
+          <form class="example-form alternative_color targy_skin">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Tantárgy</mat-label>
+              <div class="index">
+                <input type="text" placeholder="Kérlek válassz egy tantárgyat" matInput [formControl]="myControl"
+                  [matAutocomplete]="auto">
+              </div>
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option.nev_sub">
+                  {{option.nev_sub}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+            <mat-card>
+              <mat-list role="list">
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item matLine class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy hasznossága:</span>
+                    <span style="float:right">{{choosed.hasznossag}} {{max_value_tantagy[0]}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy nehézsége:</span>
+                    <span style="float:right">{{choosed.nehezseg}} {{max_value_tantagy[1]}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy kreditje:</span>
+                    <span style="float:right">{{choosed.kredit}} {{max_value_tantagy[2]}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy jósági faktora:</span>
+                    <span style="float:right">{{choosed.goodness_index}} {{max_value_tantagy[3]}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy megtartási napja:</span>
+                    <span style="float:right">{{choosed.nap}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy kezdő időpontja:</span>
+                    <span style="float:right">{{choosed.kido}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+                <mat-list-item class="size" role="listitem" *ngIf="choosed != undefined">
+                  <div matLine>
+                    <span style="float:left">Az tárgy vég időpontja:</span>
+                    <span style="float:right">{{choosed.vido}}</span>
+                  </div>
+                </mat-list-item>
+                <mat-divider *ngIf="choosed != undefined"></mat-divider>
+              </mat-list>
+            </mat-card>
+          </form>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-card-content>
+  <div class="card-buttons">
+    <div class="panel_position">
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              <span *ngIf="choosed != undefined; else elseBlock">
+                {{choosed.oktato.nev}}
+              </span>
+              <ng-template #elseBlock>
+                Kérem válasszon tantárgyat
+              </ng-template>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <ng-container *ngIf="choosed != undefined">
+            <ng-container *ngFor="let item of choosed.oktato | keyvalue; let i = index">
+              <ng-container *ngIf="item.key != 'id' && item.key != 'nev'">
+                <div class="toggle-content">
+                  <span>{{item.key}} : </span>
+                  <span>{{item.value}} {{max_value_oktato[i]}}</span>
+                </div>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="action-buttons">
+      <button mat-flat-button color="primary" (click)="add_subject()">Felvesz</button>
+      <button mat-flat-button color="warn" (click)="delete_subject()">Törlés</button>
+      <button mat-flat-button color="accent" (click)="openDialog()">Órarend</button>
+    </div>
+  </div>
+</mat-card>

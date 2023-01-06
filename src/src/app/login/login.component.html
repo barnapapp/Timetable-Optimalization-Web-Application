@@ -1,0 +1,49 @@
+<div class="center-content">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-subtitle>TimeTable</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- (selectedTabChange)="onTabChanged($event)" -->
+      <!-- <mat-tab-group [formGroup]="loginGroup" mat-stretch-tabs dynamicHeight>
+        <mat-tab label="Sign in"> -->
+      <form [formGroup]="loginGroup">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput placeholder="Email" value="" formControlName="loginEmail">
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf="loginEmail?.invalid && (loginEmail?.dirty || loginEmail?.touched)"
+            class="alert alert-danger">
+            <ng-container *ngIf="loginEmail?.errors?.['required']">
+              Email address is required.
+            </ng-container>
+            <ng-container *ngIf="loginEmail?.errors?.['email']">
+              Email address must be formatted correctly.
+            </ng-container>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="Password" formControlName="loginPassword">
+          <mat-icon matSuffix>vpn_key</mat-icon>
+          <mat-error *ngIf="loginPassword?.invalid && (loginPassword?.dirty || loginPassword?.touched)"
+            class="alert alert-danger">
+            <ng-container *ngIf="loginPassword?.errors?.['required']">
+              Password is required.
+            </ng-container>
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button class="button-style" color="primary" (click)="login()"
+          [disabled]="loginGroup.invalid">Login</button>
+      </form>
+      <!-- </mat-tab>
+      </mat-tab-group> -->
+    </mat-card-content>
+    <div>
+      <a class="register-button" routerLink="/mySignUp">Don't have an account yet?<br>Click here to sign
+        up!</a>
+    </div>
+  </mat-card>
+</div>
+```

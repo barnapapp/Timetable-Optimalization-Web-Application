@@ -1,0 +1,44 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Órarend szerkesztése</mat-card-title>
+    <mat-card-subtitle>TimeTable</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="main-content">
+    <form [formGroup]="kreditForm" (ngSubmit)="delete_array(); generate();">
+      <div class="credit-input">
+        Kérem adja meg közelítőleg hány kredit közelető tantárgyat kíván felvenni:
+        <mat-form-field>
+          <input type="number" matInput formControlName="kot_kredit">
+        </mat-form-field>
+        <mat-error *ngIf="kot_kredit?.errors?.['required']">
+          Kot_kredit is required
+        </mat-error>
+      </div>
+      <div class="credit-input">
+        Kérem adja meg közelítőleg hány kredit közeletően választható tantárgyat kíván felvenni:
+        <mat-form-field>
+          <input type="number" matInput formControlName="kotv_kredit">
+        </mat-form-field>
+      </div>
+      <div class="credit-input">
+        Kérem adja meg közelítőleg hány kredit szabadon válaszható tantárgyat kíván felvenni:
+        <mat-form-field>
+          <input type="number" matInput formControlName="szabv_kredit">
+        </mat-form-field>
+      </div>
+      <div class="mode-selection">
+        Kérem válassza ki, hogy mi szerint optimalizáljon a program:
+        <mat-form-field>
+          <mat-select formControlName="opt_sub">
+            <mat-option value="tantargy">Inkább tantárgy jósága</mat-option>
+            <mat-option value="oktato">Inkább oktató jósága</mat-option>
+            <mat-option value="kredit_okt">Kredit-jóság (oktató)</mat-option>
+            <mat-option value="kredit_tant">Kredit-jóság (tantárgy)</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <button [disabled]="!kot_kredit || !kotv_kredit || !szabv_kredit || !opt_sub" mat-flat-button color="primary"
+        type="submit">Generálás</button>
+    </form>
+  </mat-card-content>
+</mat-card>

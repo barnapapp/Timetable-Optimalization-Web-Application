@@ -1,0 +1,28 @@
+{
+    "HOME": {
+      "BEST_RATED_SUBJECT": "Legjobbra értékelt tantárgy:",
+      "BEST_RATED_TEACHER": "Legjobbra értékelt oktató:",
+      "COMPULSORY": "Kötelező tantárgy",
+      "COMPULSORY_ELECTIVE_SUBJECT": "Kötelezően választható tantárgy",
+      "DIFFICULTY": "Nehézség",
+      "GOODNESS_FACTOR": "Jósági faktor",
+      "HOME": "Főoldal",
+      "OPTIONAL_SUBJECT": "Szabadon választható tantárgy",
+      "SIGN.UP": "Regisztráció",
+      "SUBJECT_ASSESSMENTS": "Tantárgy szélsőértékek",
+      "TEACHER_ASSESSMENTS": "Oktató szélsőérték",
+      "TITLE": "Órarend",
+      "TYPE": "Típus",
+      "UTILITY": "Hasznosság",
+      "WORST_RATED_SUBJECT": "Legrosszabbra értékelt tantárgy:",
+      "WORST_RATED_TEACHER": "Legrosszabbra értékelt oktató:",
+      "DELIVERY": "Előadásmód",
+      "PREPAREDNESS": "Felkészültség",
+      "HELPFULNESS": "Segítőkészség",
+      "FEASIBILITY": "Teljesíthetőség"
+    },
+    "LANGUAGE": {
+      "SETTINGS.LANG.EN": "Angol",
+      "SETTINGS.LANG.HU": "Magyar"
+    }
+  }
