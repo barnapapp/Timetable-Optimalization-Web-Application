@@ -1,77 +1,77 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": ["tsconfig.json"],
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "plugins": ["@typescript-eslint"],
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": ["tsconfig.json"],
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
 
-  "rules": {
-    "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/consistent-type-assertions": "off",
-    "@typescript-eslint/consistent-type-definitions": "off",
-    "@typescript-eslint/dot-notation": "off",
-    "@typescript-eslint/prefer-readonly": "error",
-    "arrow-parens": ["off", "always"],
-    "brace-style": ["error", "1tbs"],
-    "comma-dangle": "error",
-    "eqeqeq": ["error", "always"],
-    "import/no-deprecated": "error",
-    "import/order": "off",
-    "linebreak-style": ["error", "windows"],
-    "no-duplicate-imports": "error",
-    "no-irregular-whitespace": "error",
-    "no-multiple-empty-lines": [
-      "error",
-      {
-        "max": 1
-      }
-    ],
-    "no-param-reassign": "error",
-    "no-redeclare": "error",
-    "no-undef-init": "off",
-    "no-underscore-dangle": "off",
-    "space-before-function-paren": [
-      "error",
-      {
-        "anonymous": "always",
-        "asyncArrow": "always",
-        "named": "never"
-      }
-    ],
-    "no-console": "warn",
-    "@typescript-eslint/explicit-member-accessibility": [
-      "error",
-      {
-        "accessibility": "explicit",
-        "overrides": {
-          "accessors": "off",
-          "constructors": "no-public",
-          "methods": "explicit",
-          "properties": "explicit",
-          "parameterProperties": "explicit"
-        }
-      }
-    ],
-    "@typescript-eslint/member-ordering": "error",
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        "selector": "enumMember",
-        "format": ["camelCase", "StrictPascalCase", "UPPER_CASE"]
-      }
-    ]
-  },
+    "rules": {
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/consistent-type-assertions": "off",
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/prefer-readonly": "error",
+        "arrow-parens": ["off", "always"],
+        "brace-style": ["error", "1tbs"],
+        "comma-dangle": "error",
+        "eqeqeq": ["error", "always"],
+        // "import/no-deprecated": "error",
+        "import/order": "off",
+        "linebreak-style": ["error", "windows"],
+        "no-duplicate-imports": "error",
+        "no-irregular-whitespace": "error",
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 1
+            }
+        ],
+        "no-param-reassign": "error",
+        "no-redeclare": "error",
+        "no-undef-init": "off",
+        "no-underscore-dangle": "off",
+        "space-before-function-paren": [
+            "error",
+            {
+                "anonymous": "always",
+                "asyncArrow": "always",
+                "named": "never"
+            }
+        ],
+        "no-console": "warn",
+        "@typescript-eslint/explicit-member-accessibility": [
+            "error",
+            {
+                "accessibility": "explicit",
+                "overrides": {
+                    "accessors": "off",
+                    "constructors": "no-public",
+                    "methods": "explicit",
+                    "properties": "explicit",
+                    "parameterProperties": "explicit"
+                }
+            }
+        ],
+        "@typescript-eslint/member-ordering": "error",
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "enumMember",
+                "format": ["camelCase", "StrictPascalCase", "UPPER_CASE"]
+            }
+        ]
+    },
 
-  "env": {
-    "browser": true,
-    "es2021": true
-  }
+    "env": {
+        "browser": true,
+        "es2021": true
+    }
 }
