@@ -1,34 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { 
-    margin: 0; 
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1589FF;
+    background-color: #1589ff;
 }
 
-div.parent_wrapper .mat-tab-body-wrapper{
+div.parent_wrapper .mat-tab-body-wrapper {
     margin-right: 40px !important;
-  }
+}
 
-  .mat-menu-content:not(:empty) {
+.mat-menu-content:not(:empty) {
     padding: 0 !important;
-  }
-
-
+}
 
 .mat-row {
     height: 11em !important;
-  }
+}
 
-  th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
-      padding: 0px !important;
-  }
+th.mat-header-cell:last-of-type,
+td.mat-cell:last-of-type,
+td.mat-footer-cell:last-of-type {
+    padding: 0px !important;
+}
 
-  .mat-expansion-panel-header.mat-expanded {
+.mat-expansion-panel-header.mat-expanded {
     height: 48px;
-  }
+}
 
-  .mat-menu-content:not(:empty) {
+.mat-menu-content:not(:empty) {
     padding: 0 !important;
-  }
+}
