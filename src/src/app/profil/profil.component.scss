@@ -1,41 +1,41 @@
 .card {
-  width: 25%;
-  margin: 1rem auto;
+    width: 25%;
+    margin: 1rem auto;
 }
 
 .profile-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
 }
 
 .saved-timetable {
-  background-color: white;
-  border-radius: 4px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  height: 40%;
+    background-color: white;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 40%;
 }
 
 .no-saved-timetable-found {
-  background-color: lightgrey;
-  font-weight: bold;
-  color: #4f4f4f;
-  opacity: 0.7;
-  border-radius: 4px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%; // 50%; -  27rem;
-  height: 50%; // 50%; - 2rem/4rem
-  background: repeating-linear-gradient(
-    45deg,
-    lightgrey,
-    lightgrey 20px,
-    lightgrey 20px,
-    #e5e5f7 100px
-  ); // 20px 20px 100px
+    background-color: lightgrey;
+    font-weight: bold;
+    color: #4f4f4f;
+    opacity: 0.7;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%; // 50%; -  27rem;
+    height: 50%; // 50%; - 2rem/4rem
+    background: repeating-linear-gradient(
+        45deg,
+        lightgrey,
+        lightgrey 20px,
+        lightgrey 20px,
+        #e5e5f7 100px
+    ); // 20px 20px 100px
 }

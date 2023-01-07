@@ -1,229 +1,241 @@
 <div class="center-content">
     <mat-card class="example-card">
         <mat-card-header>
-          <mat-card-title>Oktató/Tantárgy szerkesztés</mat-card-title>
-          <mat-card-subtitle>TimeTable</mat-card-subtitle>
+            <mat-card-title>Oktató/Tantárgy szerkesztés</mat-card-title>
+            <mat-card-subtitle>TimeTable</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
             <mat-tab-group>
                 <mat-tab label="Hozzáadás">
-                    <mat-form-field class="example-full-width" >
-                            <mat-label>Select</mat-label>
-                            <mat-select #pageValue (change)="reload()">
-                              <mat-option value="oktato">Oktató</mat-option>
-                              <mat-option value="tantargy">Tantárgy</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    
-                <form [formGroup]="timetableForm" (ngSubmit)="submit()">
-                    <ng-container [ngSwitch]="pageValue.value">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Select</mat-label>
+                        <mat-select #pageValue (change)="reload()">
+                            <mat-option value="oktato">Oktató</mat-option>
+                            <mat-option value="tantargy">Tantárgy</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <form [formGroup]="timetableForm" (ngSubmit)="submit()">
+                        <ng-container [ngSwitch]="pageValue.value">
                             <ng-container *ngSwitchCase="'oktato'">
-                                <ng-container formGroupName="oktatoForm"> 
-                                <mat-form-field class="example-full-width" >
-                                    <input type="number" matInput placeholder="Segítőkészség" formControlName="segitokeszseg" value="" >
-                                    <mat-error *ngIf="segitokeszseg?.errors?.['required']">
-                                        Segitokeszseg megadasa szukseges.
-                                    </mat-error>
-                                    <mat-error *ngIf="segitokeszseg?.errors?.['min']">
-                                        Segitokeszseg erteke minimum 0.
-                                    </mat-error>
-                                    <mat-error *ngIf="segitokeszseg?.errors?.['max']">
-                                        Segitokeszseg erteke maximum 10.
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field class="example-full-width" >
-                                    <input type="number" matInput placeholder="Felkészűltség" formControlName="felkeszultseg" value="" >
-                                    <mat-error *ngIf="felkeszultseg?.errors?.['required']">
-                                        Felkeszultseg megadasa szukseges.
-                                    </mat-error>
-                                    <mat-error *ngIf="felkeszultseg?.errors?.['min']">
-                                        Felkeszultseg erteke minimum 0.
-                                    </mat-error>
-                                    <mat-error *ngIf="felkeszultseg?.errors?.['max']">
-                                        Felkeszultseg erteke maximum 10.
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field class="example-full-width" >
-                                    <input type="text" matInput placeholder="Név" formControlName="nev" value="" >
-                                    <mat-error *ngIf="nev?.errors?.['required']">
-                                        Nev megadasa szukseges
-                                    </mat-error>
-                                    <mat-error *ngIf="nev?.errors?.minlength">
-                                        Nev hossza minimum 4 karakter
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field class="example-full-width" >
-                                    <input type="number" matInput placeholder="Előadásmód" formControlName="eloadasmod" value="" >
-                                    <mat-error *ngIf="eloadasmod?.errors?.['required']">
-                                        Előadásmód megadasa szukseges
-                                    </mat-error>
-                                    <mat-error *ngIf="eloadasmod?.errors?.['min']">
-                                        Előadásmód erteke minimum 0
-                                    </mat-error>
-                                    <mat-error *ngIf="eloadasmod?.errors?.['max']">
-                                        Előadásmód erteke maximum 10
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field class="example-full-width" >
-                                    <input type="number" matInput placeholder="Követelmények teljesíthetősége" formControlName="teljesithetoseg" value="" >
-                                    <mat-error *ngIf="teljesithetoseg?.errors?.['required']">
-                                        Teljesíthetőség megadasa szukseges
-                                    </mat-error>
-                                    <mat-error *ngIf="teljesithetoseg?.errors?.['min']">
-                                        Teljesíthetőség erteke minimum 0
-                                    </mat-error>
-                                    <mat-error *ngIf="teljesithetoseg?.errors?.['max']">
-                                        Teljesíthetőség erteke maximum 0
-                                    </mat-error>
-                                </mat-form-field>
+                                <ng-container formGroupName="oktatoForm">
+                                    <mat-form-field class="example-full-width">
+                                        <input type="number" matInput placeholder="Segítőkészség"
+                                            formControlName="segitokeszseg" value="">
+                                        <mat-error *ngIf="segitokeszseg?.errors?.['required']">
+                                            Segitokeszseg megadasa szukseges.
+                                        </mat-error>
+                                        <mat-error *ngIf="segitokeszseg?.errors?.['min']">
+                                            Segitokeszseg erteke minimum 0.
+                                        </mat-error>
+                                        <mat-error *ngIf="segitokeszseg?.errors?.['max']">
+                                            Segitokeszseg erteke maximum 10.
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input type="number" matInput placeholder="Felkészűltség"
+                                            formControlName="felkeszultseg" value="">
+                                        <mat-error *ngIf="felkeszultseg?.errors?.['required']">
+                                            Felkeszultseg megadasa szukseges.
+                                        </mat-error>
+                                        <mat-error *ngIf="felkeszultseg?.errors?.['min']">
+                                            Felkeszultseg erteke minimum 0.
+                                        </mat-error>
+                                        <mat-error *ngIf="felkeszultseg?.errors?.['max']">
+                                            Felkeszultseg erteke maximum 10.
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input type="text" matInput placeholder="Név" formControlName="nev" value="">
+                                        <mat-error *ngIf="nev?.errors?.['required']">
+                                            Nev megadasa szukseges
+                                        </mat-error>
+                                        <mat-error *ngIf="nev?.errors?.minlength">
+                                            Nev hossza minimum 4 karakter
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input type="number" matInput placeholder="Előadásmód"
+                                            formControlName="eloadasmod" value="">
+                                        <mat-error *ngIf="eloadasmod?.errors?.['required']">
+                                            Előadásmód megadasa szukseges
+                                        </mat-error>
+                                        <mat-error *ngIf="eloadasmod?.errors?.['min']">
+                                            Előadásmód erteke minimum 0
+                                        </mat-error>
+                                        <mat-error *ngIf="eloadasmod?.errors?.['max']">
+                                            Előadásmód erteke maximum 10
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input type="number" matInput placeholder="Követelmények teljesíthetősége"
+                                            formControlName="teljesithetoseg" value="">
+                                        <mat-error *ngIf="teljesithetoseg?.errors?.['required']">
+                                            Teljesíthetőség megadasa szukseges
+                                        </mat-error>
+                                        <mat-error *ngIf="teljesithetoseg?.errors?.['min']">
+                                            Teljesíthetőség erteke minimum 0
+                                        </mat-error>
+                                        <mat-error *ngIf="teljesithetoseg?.errors?.['max']">
+                                            Teljesíthetőség erteke maximum 0
+                                        </mat-error>
+                                    </mat-form-field>
+                                </ng-container>
                             </ng-container>
+                            <ng-container *ngSwitchCase="'tantargy'">
+                                <ng-container formGroupName="subjectForm">
+                                    <mat-form-field class="example-full-width">
+                                        <input type="number" matInput placeholder="Nehézség" formControlName="nehezseg"
+                                            value="">
+                                        <mat-error *ngIf="nehezseg?.errors?.['required']">
+                                            Nehezseg megadasa szukseges
+                                        </mat-error>
+                                        <mat-error *ngIf="nehezseg?.errors?.['min']">
+                                            Nehezseg erteke minimum 0
+                                        </mat-error>
+                                        <mat-error *ngIf="nehezseg?.errors?.['max']">
+                                            Nehezseg erteke maximum 5
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input type="number" matInput placeholder="Hasznosság"
+                                            formControlName="hasznossag" value="">
+                                        <mat-error *ngIf="hasznossag?.errors?.['required']">
+                                            Hasznossag megadasa szukseges.
+                                        </mat-error>
+                                        <mat-error *ngIf="hasznossag?.errors?.['min']">
+                                            Hasznossag erteke minimum 0
+                                        </mat-error>
+                                        <mat-error *ngIf="hasznossag?.errors?.['max']">
+                                            Hasznossag erteke maximum 5.
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input type="" matInput placeholder="Név" formControlName="nev_sub" value="">
+                                        <mat-error *ngIf="nev_sub?.errors?.['required']">
+                                            Name is required
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input type="number" matInput placeholder="Kredit" formControlName="kredit"
+                                            value="">
+                                        <mat-error *ngIf="kredit?.errors?.['required']">
+                                            Kredit is required
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Tantárgy megtartási napja</mat-label>
+                                        <mat-select formControlName="nap">
+                                            <mat-option value="hetfo">Hétfő</mat-option>
+                                            <mat-option value="kedd">Kedd</mat-option>
+                                            <mat-option value="szerda">Szerda</mat-option>
+                                            <mat-option value="csutortok">Csütörtök</mat-option>
+                                            <mat-option value="pentek">Péntek</mat-option>
+                                        </mat-select>
+                                        <mat-error *ngIf="nap?.errors?.['required']">
+                                            Day is required
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field class="time-width">
+                                        <input type="time" matInput formControlName="kido" placeholder="Kezdo idopont"
+                                            value="00:00">
+                                        <mat-error *ngIf="kido?.errors?.['required']">
+                                            Kezdő idopont is required
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field class="time-width">
+                                        <input type="time" matInput formControlName="vido" placeholder="Veg idopont"
+                                            value="00:00">
+                                        <mat-error *ngIf="vido?.errors?.['required']">
+                                            Vég idopont is required
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Oktato</mat-label>
+                                        <mat-select formControlName="oktato">
+                                            <ng-container *ngFor="let item of trainers">
+                                                <mat-option [value]="item">{{item.nev}}</mat-option>
+                                            </ng-container>
+                                        </mat-select>
+                                        <mat-error *ngIf="oktato?.errors?.['required']">
+                                            Oktato is required
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Tárgy típus</mat-label>
+                                        <mat-select formControlName="tipus">
+                                            <mat-option value="Szabvál">Szabvál</mat-option>
+                                            <mat-option value="Kötvál">Kötvál</mat-option>
+                                            <mat-option value="Kötelező">Kötelező</mat-option>
+                                        </mat-select>
+                                        <mat-error *ngIf="tipus?.errors?.['required']">
+                                            Type is required
+                                        </mat-error>
+                                    </mat-form-field>
+                                </ng-container>
                             </ng-container>
-                            <ng-container *ngSwitchCase="'tantargy'">    
-                                <ng-container formGroupName="subjectForm">   
-                                <mat-form-field class="example-full-width" >
-                                    <input type="number" matInput placeholder="Nehézség" formControlName="nehezseg" value="" >
-                                    <mat-error *ngIf="nehezseg?.errors?.['required']">
-                                        Nehezseg megadasa szukseges
-                                    </mat-error>
-                                    <mat-error *ngIf="nehezseg?.errors?.['min']">
-                                        Nehezseg erteke minimum 0
-                                    </mat-error>
-                                    <mat-error *ngIf="nehezseg?.errors?.['max']">
-                                        Nehezseg erteke maximum 5
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field class="example-full-width" >
-                                    <input type="number" matInput placeholder="Hasznosság" formControlName="hasznossag" value="" >
-                                    <mat-error *ngIf="hasznossag?.errors?.['required']">
-                                        Hasznossag megadasa szukseges.
-                                    </mat-error>
-                                    <mat-error *ngIf="hasznossag?.errors?.['min']">
-                                        Hasznossag erteke minimum 0
-                                    </mat-error>
-                                    <mat-error *ngIf="hasznossag?.errors?.['max']">
-                                        Hasznossag erteke maximum 5.
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field class="example-full-width"  >
-                                    <input type="" matInput placeholder="Név" formControlName="nev_sub" value="" >
-                                    <mat-error *ngIf="nev_sub?.errors?.['required']">
-                                        Name is required
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field class="example-full-width"  >
-                                    <input type="number" matInput placeholder="Kredit" formControlName="kredit" value="" >
-                                    <mat-error *ngIf="kredit?.errors?.['required']">
-                                        Kredit is required
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field class="example-full-width" >
-                                    <mat-label>Tantárgy megtartási napja</mat-label>
-                                    <mat-select formControlName="nap">
-                                        <mat-option value="hetfo">Hétfő</mat-option>
-                                        <mat-option value="kedd">Kedd</mat-option>
-                                        <mat-option value="szerda">Szerda</mat-option>
-                                        <mat-option value="csutortok">Csütörtök</mat-option>
-                                        <mat-option value="pentek">Péntek</mat-option>
-                                    </mat-select>
-                                 <mat-error *ngIf="nap?.errors?.['required']">
-                                    Day is required
-                                </mat-error>
-                                </mat-form-field >
-                                <mat-form-field class="time-width" >
-                                    <input type="time" matInput formControlName="kido" placeholder="Kezdo idopont" value="00:00" >
-                                    <mat-error *ngIf="kido?.errors?.['required']">
-                                        Kezdő idopont is required
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field class="time-width" >
-                                    <input type="time" matInput formControlName="vido" placeholder="Veg idopont" value="00:00" >
-                                    <mat-error *ngIf="vido?.errors?.['required']">
-                                        Vég idopont is required
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field class="example-full-width" >
-                                    <mat-label>Oktato</mat-label>
-                                    <mat-select formControlName="oktato">
-                                        <ng-container *ngFor="let item of trainers">
-                                            <mat-option [value]="item">{{item.nev}}</mat-option>
-                                        </ng-container>
-                                    </mat-select>
-                                    <mat-error *ngIf="oktato?.errors?.['required']">
-                                        Oktato is required
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field class="example-full-width" >
-                                    <mat-label>Tárgy típus</mat-label>
-                                    <mat-select formControlName="tipus">
-                                        <mat-option value="Szabvál">Szabvál</mat-option>
-                                        <mat-option value="Kötvál">Kötvál</mat-option>
-                                        <mat-option value="Kötelező">Kötelező</mat-option>
-                                    </mat-select>
-                                    <mat-error *ngIf="tipus?.errors?.['required']">
-                                        Type is required
-                                    </mat-error>
-                            </mat-form-field>
                         </ng-container>
-                            </ng-container>
-                    </ng-container>
-                     
-                     <button mat-raised-button (click)="onNextClicked(pageValue.value)" class="button-style" color="primary" type="submit">Add</button>
+
+                        <button mat-raised-button (click)="onNextClicked(pageValue.value)" class="button-style"
+                            color="primary" type="submit">Add</button>
                     </form>
                 </mat-tab>
-    
+
                 <mat-tab label="Törlés">
                     <form [formGroup]="chooser">
-                  <!--  <button class="menu_width" mat-button [matMenuTriggerFor]="menu">Choose your data type</button>
+                        <!--  <button class="menu_width" mat-button [matMenuTriggerFor]="menu">Choose your data type</button>
                     <mat-menu #menu="matMenu" formControlName="choose_type">
                             <mat-option [value]="o.name" *ngFor="let o of options">{{o.name}}</mat-option>
                     </mat-menu>-->
-                    <select formControlName="choose_type" class="select_menu">
-                        <option [value]="o.name" *ngFor="let o of options">{{o.name}}</option>
-                    </select>
+                        <select formControlName="choose_type" class="select_menu">
+                            <option [value]="o.name" *ngFor="let o of options">{{o.name}}</option>
+                        </select>
                         <ng-container *ngIf="chooser.value.choose_type == 'Oktato'">
-                            <mat-form-field class="example-full-width">     
+                            <mat-form-field class="example-full-width">
                                 <mat-label>Select</mat-label>
-                                     <mat-select #asd>
-                                        <ng-container *ngFor="let item of trainers">
-                                            <mat-option [value]="item">{{item.nev}}</mat-option>
-                                        </ng-container>
-                                    </mat-select>
+                                <mat-select #asd>
+                                    <ng-container *ngFor="let item of trainers">
+                                        <mat-option [value]="item">{{item.nev}}</mat-option>
+                                    </ng-container>
+                                </mat-select>
                             </mat-form-field>
-                            <button mat-raised-button class="button-style" (click)="onDelete(asd.value)" color="primary">Delete</button>
+                            <button mat-raised-button class="button-style" (click)="onDelete(asd.value)"
+                                color="primary">Delete</button>
                         </ng-container>
                         <ng-container *ngIf="chooser.value.choose_type == 'Tantargy'">
-                            <mat-form-field class="example-full-width">     
+                            <mat-form-field class="example-full-width">
                                 <mat-label>Select</mat-label>
-                                     <mat-select #asd>
-                                        <ng-container *ngFor="let item of subjects">
-                                            <mat-option [value]="item">{{item.nev_sub}}</mat-option>
-                                        </ng-container>
-                                    </mat-select>
+                                <mat-select #asd>
+                                    <ng-container *ngFor="let item of subjects">
+                                        <mat-option [value]="item">{{item.nev_sub}}</mat-option>
+                                    </ng-container>
+                                </mat-select>
                             </mat-form-field>
-                            <button mat-raised-button class="button-style" (click)="onDelete_tantargy(asd.value)" color="primary">Delete</button>
+                            <button mat-raised-button class="button-style" (click)="onDelete_tantargy(asd.value)"
+                                color="primary">Delete</button>
                         </ng-container>
-                </form>
+                    </form>
                 </mat-tab>
-           
-                <mat-tab label="Módosítás"> 
+
+                <mat-tab label="Módosítás">
                     <form [formGroup]="chooser">
-                    <select formControlName="choose_type" class="select_menu">
-                        <option [value]="o.name" *ngFor="let o of options">{{o.name}}</option>
-                    </select>
-                    <ng-container *ngIf="chooser.value.choose_type == 'Oktato'">
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Select</mat-label>
-                            <mat-select #kasd>
-                                <ng-container *ngFor="let item of trainers">
-                                    <mat-option [value]="item">{{item.nev}}</mat-option>
-                                </ng-container>
-                            </mat-select>
-                        </mat-form-field>
-                        <app-dialogtmp *ngIf="kasd.value" [trainer]="kasd.value"></app-dialogtmp>
-                    </ng-container>
-                    <ng-container *ngIf="chooser.value.choose_type == 'Tantargy'">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Select</mat-label>
+                        <select formControlName="choose_type" class="select_menu">
+                            <option [value]="o.name" *ngFor="let o of options">{{o.name}}</option>
+                        </select>
+                        <ng-container *ngIf="chooser.value.choose_type == 'Oktato'">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Select</mat-label>
+                                <mat-select #kasd>
+                                    <ng-container *ngFor="let item of trainers">
+                                        <mat-option [value]="item">{{item.nev}}</mat-option>
+                                    </ng-container>
+                                </mat-select>
+                            </mat-form-field>
+                            <app-dialogtmp *ngIf="kasd.value" [trainer]="kasd.value"></app-dialogtmp>
+                        </ng-container>
+                        <ng-container *ngIf="chooser.value.choose_type == 'Tantargy'">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Select</mat-label>
                                 <mat-select #kasd>
                                     <ng-container *ngFor="let item of subjects">
                                         <mat-option [value]="item">{{item.nev_sub}}</mat-option>
@@ -231,10 +243,10 @@
                                 </mat-select>
                             </mat-form-field>
                             <app-dialog-subject *ngIf="kasd.value" [subject]="kasd.value"></app-dialog-subject>
-                    </ng-container>
-                </form>
+                        </ng-container>
+                    </form>
                 </mat-tab>
             </mat-tab-group>
         </mat-card-content>
-      </mat-card>
-    </div>
+    </mat-card>
+</div>

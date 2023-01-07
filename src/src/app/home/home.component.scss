@@ -5,22 +5,21 @@ mat-card {
 }
 
 mat-grid-tile {
-    background: #DFF2FF;
+    background: #dff2ff;
     border-radius: 15px;
     width: 370px !important;
     margin-left: 15px;
     margin-top: 20px !important;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  }
-
+}
 
 .sz_t {
-    border: 2px solid #85929E;
+    border: 2px solid #85929e;
     padding: 3px;
     margin: 13px 0px 0px 110px !important;
     width: 170px;
     text-align: center;
-    background-color: #85929E;
+    background-color: #85929e;
     color: white;
     border-radius: 6px;
     position: absolute;
@@ -28,12 +27,12 @@ mat-grid-tile {
 }
 
 .sz_o {
-    border: 2px solid #85929E;
+    border: 2px solid #85929e;
     padding: 3px;
     margin: 13px 0px 0px 513px !important;
     width: 170px;
     text-align: center;
-    background-color: #85929E;
+    background-color: #85929e;
     color: white;
     border-radius: 6px;
     position: absolute;
@@ -55,7 +54,7 @@ mat-grid-tile {
 }
 
 .content-table thead tr {
-    background-color: #1589FF;
+    background-color: #1589ff;
     color: #ffffff;
     text-align: left;
     font-weight: bold;
@@ -71,13 +70,13 @@ mat-grid-tile {
 }
 
 .content-table tbody tr:last-of-type {
-    border-bottom: 2px solid #1589FF;
+    border-bottom: 2px solid #1589ff;
 }
 
 .better-index {
     font-weight: bold;
-    color: #1589FF;
-    background-color: #DEFBFD;
+    color: #1589ff;
+    background-color: #defbfd;
 }
 
 /*

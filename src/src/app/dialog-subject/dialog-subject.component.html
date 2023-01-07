@@ -1,6 +1,6 @@
 <form [formGroup]="subjectForm" (ngSubmit)="submit()">
     <mat-form-field>
-        <input type="number" matInput placeholder="Nehézség" formControlName="nehezseg" >
+        <input type="number" matInput placeholder="Nehézség" formControlName="nehezseg">
         <mat-error *ngIf="nehezseg?.errors?.['required']">
             Nehezseg megadasa szukseges.
         </mat-error>
@@ -21,43 +21,43 @@
         </mat-error>
         <mat-error *ngIf="hasznossag?.errors?.['max']">
             Hasznossag erteke maximum 10.
-        </mat-error>        
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input type="number" matInput placeholder="Kredit" formControlName="kredit">
         <mat-error *ngIf="kredit?.errors?.['required']">
             Kredit megadasa szukseges.
-        </mat-error>    
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
-        <input type="" matInput placeholder="Név" formControlName="nev" >
+        <input type="" matInput placeholder="Név" formControlName="nev">
         <mat-error *ngIf="nev?.errors?.['required']">
             Nev megadasa szukseges.
         </mat-error>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Tantárgy megtartási napja</mat-label>
-            <mat-select formControlName="nap">
-                <mat-option value="Hétfő">Hétfő</mat-option>
-                <mat-option value="Kedd">Kedd</mat-option>
-                <mat-option value="Szerda">Szerda</mat-option>
-                <mat-option value="Csütörtök">Csütörtök</mat-option>
-                <mat-option value="Péntek">Péntek</mat-option>
-            </mat-select>
-            <mat-error *ngIf="nap?.errors?.['required']">
-                Nap megadasa szukseges.
-            </mat-error>
+        <mat-select formControlName="nap">
+            <mat-option value="Hétfő">Hétfő</mat-option>
+            <mat-option value="Kedd">Kedd</mat-option>
+            <mat-option value="Szerda">Szerda</mat-option>
+            <mat-option value="Csütörtök">Csütörtök</mat-option>
+            <mat-option value="Péntek">Péntek</mat-option>
+        </mat-select>
+        <mat-error *ngIf="nap?.errors?.['required']">
+            Nap megadasa szukseges.
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Oktato</mat-label>
-            <mat-select formControlName="oktato">
-                <ng-container *ngFor="let item of trainers">
-                    <mat-option [value]="item">{{item.nev}}</mat-option>
-                </ng-container>
-            </mat-select>
-            <mat-error *ngIf="oktato?.errors?.['required']">
-                Oktato megadasa szukseges.
-            </mat-error>
+        <mat-select formControlName="oktato">
+            <ng-container *ngFor="let item of trainers">
+                <mat-option [value]="item">{{item.nev}}</mat-option>
+            </ng-container>
+        </mat-select>
+        <mat-error *ngIf="oktato?.errors?.['required']">
+            Oktato megadasa szukseges.
+        </mat-error>
     </mat-form-field>
     <mat-form-field class="time_width">
         <input type="time" matInput placeholder="Kezdő időpont" formControlName="kido" value="00:00">
@@ -73,14 +73,14 @@
     </mat-form-field>
     <mat-form-field class="kov_width">
         <mat-label>Tárgy típus</mat-label>
-            <mat-select formControlName="tipus">
-                <mat-option value="Szabvál">Szabvál</mat-option>
-                <mat-option value="Kötvál">Kötvál</mat-option>
-                <mat-option value="Kötelező">Kötelező</mat-option>
-            </mat-select>
-            <mat-error *ngIf="tipus?.errors?.['required']">
-                Tipus megadasa szukseges.
-            </mat-error>
+        <mat-select formControlName="tipus">
+            <mat-option value="Szabvál">Szabvál</mat-option>
+            <mat-option value="Kötvál">Kötvál</mat-option>
+            <mat-option value="Kötelező">Kötelező</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipus?.errors?.['required']">
+            Tipus megadasa szukseges.
+        </mat-error>
     </mat-form-field>
     <button mat-raised-button class="button-style" color="primary" type="submit">Change</button>
 </form>

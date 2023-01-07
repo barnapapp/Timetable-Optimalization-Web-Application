@@ -1,28 +1,28 @@
 {
     "HOME": {
-      "BEST_RATED_SUBJECT": "Best rated subject:",
-      "BEST_RATED_TEACHER": "Best rated professor:",
-      "COMPULSORY": "Compulsory subject",
-      "COMPULSORY_ELECTIVE_SUBJECT": "Compulsory elective subject",
-      "DIFFICULTY": "Difficulty",
-      "GOODNESS_FACTOR": "Goodness factor",
-      "HOME": "Home",
-      "OPTIONAL_SUBJECT": "Optional subject",
-      "SIGN.UP": "Sign up",
-      "SUBJECT_ASSESSMENTS": "Subject extreme value",
-      "TEACHER_ASSESSMENTS": "Teacher extreme value",
-      "TITLE": "Timetable",
-      "TYPE": "Type",
-      "UTILITY": "Utility",
-      "WORST_RATED_SUBJECT": "Worst rated subject:",
-      "WORST_RATED_TEACHER": "Worst rated professor:",
-      "DELIVERY": "Delivery",
-      "PREPAREDNESS": "Preparedness",
-      "HELPFULNESS": "Helpfulness",
-      "FEASIBILITY": "Feasibility"
+        "BEST_RATED_SUBJECT": "Best rated subject:",
+        "BEST_RATED_TEACHER": "Best rated professor:",
+        "COMPULSORY": "Compulsory subject",
+        "COMPULSORY_ELECTIVE_SUBJECT": "Compulsory elective subject",
+        "DIFFICULTY": "Difficulty",
+        "GOODNESS_FACTOR": "Goodness factor",
+        "HOME": "Home",
+        "OPTIONAL_SUBJECT": "Optional subject",
+        "SIGN.UP": "Sign up",
+        "SUBJECT_ASSESSMENTS": "Subject extreme value",
+        "TEACHER_ASSESSMENTS": "Teacher extreme value",
+        "TITLE": "Timetable",
+        "TYPE": "Type",
+        "UTILITY": "Utility",
+        "WORST_RATED_SUBJECT": "Worst rated subject:",
+        "WORST_RATED_TEACHER": "Worst rated professor:",
+        "DELIVERY": "Delivery",
+        "PREPAREDNESS": "Preparedness",
+        "HELPFULNESS": "Helpfulness",
+        "FEASIBILITY": "Feasibility"
     },
     "LANGUAGE": {
-      "SETTINGS.LANG.EN": "English",
-      "SETTINGS.LANG.HU": "Hungarian"
+        "SETTINGS.LANG.EN": "English",
+        "SETTINGS.LANG.HU": "Hungarian"
     }
-  }
+}

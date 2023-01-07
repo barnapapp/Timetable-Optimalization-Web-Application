@@ -1,43 +1,50 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { user } from '../models/user';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class UsersService {
+    private readonly users?: Observable<any[]>;
+    private readonly maps?: Observable<any[]>;
 
-  users?: Observable<any[]>;
-  maps?: Observable<any[]>;
+    constructor(private readonly afs: AngularFirestore) {
+        this.users = this.afs.collection('Users').valueChanges();
+        this.maps = this.afs.collection('user-table').valueChanges();
+    }
 
-  constructor(private afs: AngularFirestore) { 
-    this.users = this.afs.collection('Users').valueChanges();
-    this.maps = this.afs.collection('user-table').valueChanges();
-  }
+    // return type
+    public addMap(user: string, map: object) {
+        return this.afs
+            .collection<any>('user-table')
+            .doc(user)
+            .set(Object.assign({}, map));
+    }
 
-  addMap(user: string, map: object) {
-    return this.afs.collection<any>("user-table").doc(user).set(Object.assign({},map));
-  }
+    public listMaps(): Observable<any[]> | undefined {
+        return this.maps;
+    }
 
-  listMaps() {
-    return this.maps;
-  }
+    // return type
+    public create(user: user) {
+        return this.afs.collection<user>('Users').doc(user.id).set(user);
+    }
 
-  create(user: user) {
-    return this.afs.collection<user>("Users").doc(user.id).set(user);
-  }
+    public listUsers(): Observable<any[]> | undefined {
+        return this.users;
+    }
 
-  listUsers() {
-    return this.users;
-  }
-
-  deleteMap() {
-    this.afs.collection('user-table').get().toPromise().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        doc.ref.delete();
-      })
-    })
-  }
-
+    public deleteMap(): void {
+        this.afs
+            .collection('user-table')
+            .get()
+            .toPromise()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    doc.ref.delete();
+                });
+            });
+    }
 }

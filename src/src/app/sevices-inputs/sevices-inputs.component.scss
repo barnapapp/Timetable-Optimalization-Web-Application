@@ -1,134 +1,133 @@
-
 .example-card {
-  max-width: 800px;
-  max-height: 800px;
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  margin: 9vh auto; // középre helyezi a mat-card-ot a képernyőn
-  text-align: center;
+    max-width: 800px;
+    max-height: 800px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 9vh auto; // középre helyezi a mat-card-ot a képernyőn
+    text-align: center;
 }
 
 .example-card-change {
-  max-width: 700px;
-  max-height: 800px;
-  height: 550px;
-  display: none;
+    max-width: 700px;
+    max-height: 800px;
+    height: 550px;
+    display: none;
 }
 
 .div_button_none {
-  display: none;
+    display: none;
 }
 
 .other_card {
-  max-width: 800px;
-  max-height: 800px;
-  height: 550px;
-  display: none;
+    max-width: 800px;
+    max-height: 800px;
+    height: 550px;
+    display: none;
 }
 
 .other_card_change {
-  max-width: 800px;
-  max-height: 800px;
-  height: 550px;
-  margin-top: 380px;
+    max-width: 800px;
+    max-height: 800px;
+    height: 550px;
+    margin-top: 380px;
 }
 
 .example-form {
-  width: 100%;
+    width: 100%;
 }
 
 .example-full-width {
-  width: 50%;
-  margin-top: 10px;
-  text-align: center;
-  justify-content: center;
-  font-size: 1.2em;
-  margin-left: 35px;
+    width: 50%;
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.2em;
+    margin-left: 35px;
 }
 
 .mat-form-field-appearance-fill .mat-form-field-flex {
-  background-color: rgba(0, 0, 0, 0) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .targy_skin {
-  background-color: rgba(0, 0, 0, 0) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .mat-accordion > .mat-expansion-panel-spacing:last-child,
 .mat-accordion
-  > *:last-child:not(.mat-expansion-panel)
-  .mat-expansion-panel-spacing {
-  background-color: #defbfd !important;
+    > *:last-child:not(.mat-expansion-panel)
+    .mat-expansion-panel-spacing {
+    background-color: #defbfd !important;
 }
 
 .index {
-  z-index: 5 !important;
+    z-index: 5 !important;
 }
 
 .size {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 .select_red {
-  color: red;
+    color: red;
 }
 
 .card-buttons {
-  display: flex;
-  margin-top: auto;
-  justify-content: space-between;
-  // margin: auto 2rem; // beljebb vinni lenti gombokat
-  // align-items: flex-end; // hozzáadva: fentről nyílik lefelé, kivéve: lentről nyílik felfelé
+    display: flex;
+    margin-top: auto;
+    justify-content: space-between;
+    // margin: auto 2rem; // beljebb vinni lenti gombokat
+    // align-items: flex-end; // hozzáadva: fentről nyílik lefelé, kivéve: lentről nyílik felfelé
 }
 
 .card-buttons button {
-  width: 230px;
-  height: 45px;
-  border-radius: 6px;
+    width: 230px;
+    height: 45px;
+    border-radius: 6px;
 }
 
 .action-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: auto;
 }
 
 .panel_position {
-  width: 20rem;
+    width: 20rem;
 }
 
 .addedSub {
-  background-color: #f66d55;
+    background-color: #f66d55;
 }
 
 .list_green {
-  background-color: #f66d55;
+    background-color: #f66d55;
 }
 
 mat-panel-description {
-  justify-content: center;
-  margin: 0;
+    justify-content: center;
+    margin: 0;
 }
 
 mat-list {
-  padding: 0;
+    padding: 0;
 }
 
 .toggle-content {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 mat-list-item {
-  height: 25px !important;
+    height: 25px !important;
 }
 
 .center_list {
-  margin-left: 50px;
+    margin-left: 50px;
 }
 
 mat-divider {
-  margin-left: 50px;
+    margin-left: 50px;
 }
