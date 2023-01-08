@@ -11,17 +11,8 @@ import { UsersService } from '../services/users.service';
 })
 export class TablesComponent implements OnInit {
     public data = new Map();
-    // displayedColumns nincs sehol használva => kilehet törölni
-    public displayedColumns: string[] = [
-        'Hétfő',
-        'Kedd',
-        'Szerda',
-        'Csütörtök',
-        'Péntek'
-    ];
     private tables_data!: tantargy[];
     private readonly user_id = sessionStorage.getItem('id');
-    private readonly data_array: any = []; // nincs használva -> törlés
 
     constructor(
         private readonly tablservice: TableService,

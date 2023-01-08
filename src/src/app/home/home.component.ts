@@ -52,10 +52,10 @@ export class HomeComponent {
                 this.min_index = 10;
                 this.arrayOfSubject = items;
                 this.arrayOfSubject?.forEach((x) => {
-                    if (x.goodness_index > this.max_index!) {
+                    if (this.max_index && x.goodness_index > this.max_index) {
                         this.max_index = x.goodness_index;
                     }
-                    if (x.goodness_index < this.min_index!) {
+                    if (this.min_index && x.goodness_index < this.min_index) {
                         this.min_index = x.goodness_index;
                     }
                     if (x.goodness_index === this.max_index) {
@@ -130,10 +130,10 @@ export class HomeComponent {
             this.max_index2 = 0;
             this.min_index2 = 10;
             this.arrayOfTrainer?.forEach((y) => {
-                if (y.goodness_index > this.max_index2!) {
+                if (this.max_index2 && y.goodness_index > this.max_index2) {
                     this.max_index2 = y.goodness_index;
                 }
-                if (y.goodness_index < this.min_index2!) {
+                if (this.min_index2 && y.goodness_index < this.min_index2) {
                     this.min_index2 = y.goodness_index;
                 }
                 if (y.goodness_index === this.max_index2) {

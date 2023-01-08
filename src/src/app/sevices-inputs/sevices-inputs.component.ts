@@ -15,11 +15,9 @@ import { TablesComponent } from '../tables/tables.component';
     styleUrls: ['./sevices-inputs.component.scss']
 })
 export class SevicesInputsComponent implements OnInit {
-    // panelOpenState = false;
     public myControl = new FormControl('');
     public filteredOptions?: Observable<tantargy[]>;
     public choosed: any;
-    public subject: any; // erre nincs szükség mert sehol nincsen használva, private readonly subject: any -> unused
     public max_value_oktato: String[] = [
         '(10)',
         '(10)',
@@ -70,7 +68,7 @@ export class SevicesInputsComponent implements OnInit {
         });
     }
 
-    public openDialog() {
+    public openDialog(): void {
         this.dialog.open(TablesComponent, {
             disableClose: true
         });

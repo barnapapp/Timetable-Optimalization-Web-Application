@@ -11,14 +11,6 @@ import { UsersService } from '../services/users.service';
 })
 export class TableGenerateComponent implements OnInit {
     public data = new Map();
-    // displayedColumns nincs sehol használva => kilehet törölni
-    public displayedColumns: string[] = [
-        'Hétfő',
-        'Kedd',
-        'Szerda',
-        'Csütörtök',
-        'Péntek'
-    ];
     private generate_table!: tantargy[];
     private readonly user_id = sessionStorage.getItem('id');
 

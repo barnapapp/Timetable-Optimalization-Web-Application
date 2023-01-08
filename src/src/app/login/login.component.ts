@@ -12,10 +12,7 @@ import { SharedService } from '../services/shared.service';
 })
 export class LoginComponent {
     public chekker = false;
-    public loginGroup = new FormGroup({
-        loginPassword: new FormControl('', [Validators.required]),
-        loginEmail: new FormControl('', [Validators.required, Validators.email])
-    });
+    public loginGroup: FormGroup;
     private readonly element?: HTMLElement;
 
     constructor(
@@ -23,7 +20,15 @@ export class LoginComponent {
         private readonly toast: HotToastService,
         private readonly router: Router,
         private readonly shared: SharedService
-    ) {}
+    ) {
+        this.loginGroup = new FormGroup({
+            loginPassword: new FormControl('', [Validators.required]),
+            loginEmail: new FormControl('', [
+                Validators.required,
+                Validators.email
+            ])
+        });
+    }
 
     get loginPassword() {
         return this.loginGroup.get('loginPassword');
