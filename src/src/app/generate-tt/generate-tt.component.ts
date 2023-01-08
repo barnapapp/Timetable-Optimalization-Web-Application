@@ -114,7 +114,7 @@ export class GenerateTtComponent implements OnInit {
         });
     }
 
-    public delete_array() {
+    public delete_array(): void {
         if (!this.kreditForm.valid) {
             return;
         }
@@ -198,11 +198,11 @@ export class GenerateTtComponent implements OnInit {
         }
     }
 
-    public delete() {
+    public delete(): void {
         this.generateService.removeGeneralTable();
     }
 
-    public generate() {
+    public generate(): void {
         let delete_index = 0;
         let index = 0;
         let index_tan = 0;
@@ -551,7 +551,7 @@ export class GenerateTtComponent implements OnInit {
         }
     }
 
-    private openDialog() {
+    private openDialog(): void {
         this.dialog.open(TableGenerateComponent, {
             disableClose: true
         });

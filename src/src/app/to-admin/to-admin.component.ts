@@ -110,9 +110,9 @@ export class ToAdminComponent implements OnInit {
         return (this.timetableForm.get('subjectForm') as FormGroup).get('vido');
     }
 
-    // what xD
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    public reload(): void {}
+    public reload(): void {
+        return;
+    }
 
     public submit(): void {
         if (this.subjects?.length !== undefined) {
@@ -136,7 +136,6 @@ export class ToAdminComponent implements OnInit {
                             .value
                     )
                     ?.then(() => {
-                        //  this.toast.loading("...");  // felesleges-> törlés
                         this.toast.success('Oktato sikeresen rogzitve');
                         this.timetableForm.reset();
                     });
@@ -151,7 +150,6 @@ export class ToAdminComponent implements OnInit {
                             .value
                     )
                     ?.then(() => {
-                        // this.toast.loading("..."); // felesleges-> törlés
                         this.toast.success('Tantárgy sikeresen rögzítve');
                         this.timetableForm.reset();
                     });
@@ -170,9 +168,7 @@ export class ToAdminComponent implements OnInit {
         this.nextClicked = this.looker;
     }
 
-    // ez akkor lehetne onDelete_oktato ha már rákövetkező a tantárgy és annak specifikáltad is a nevét,
-    // ez az onDelete így általánosan mindkettőre vonatkozhat tantárgy vagy oktató
-    public onDelete(oktato: oktato): void {
+    public onDelete_oktato(oktato: oktato): void {
         this.oktatoServie.deleteTrainer(oktato);
     }
 
