@@ -22,20 +22,17 @@ export class TantargyService {
         return this.tantargyak;
     }
 
-    // return type: AngularFirestoreCollection<tantargy>
-    public addSubject(tantargy: tantargy) {
+    public addSubject(tantargy: tantargy): Promise<void> | undefined {
         tantargy.id = this.afs.createId();
         tantargy.goodness_index = +this.index_of_goodness(tantargy).toFixed(3);
         return this.tantargyCollection?.doc(tantargy.id).set(tantargy);
     }
 
-    // return type: AngularFirestoreCollection<tantargy>
-    public deleteSubject(tantargy: tantargy) {
+    public deleteSubject(tantargy: tantargy): void {
         this.tantargyCollection?.doc(tantargy.id).delete();
     }
 
-    // return type: AngularFirestoreCollection<tantargy>
-    public updateSubject(tantargy: tantargy) {
+    public updateSubject(tantargy: tantargy): Promise<void> | undefined {
         return this.tantargyCollection?.doc(tantargy.id).set(tantargy);
     }
 

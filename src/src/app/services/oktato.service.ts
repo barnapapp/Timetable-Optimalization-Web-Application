@@ -18,8 +18,7 @@ export class OktatoService {
         this.oktatok = this.afs.collection('oktato').valueChanges();
     }
 
-    // return type: AngularFirestoreCollection<oktato>
-    public addTrainer(oktato: oktato) {
+    public addTrainer(oktato: oktato): Promise<void> | undefined {
         oktato.id = this.afs.createId();
         oktato.goodness_index = +this.index_of_goodness(oktato).toFixed(3);
         return this.oktatoCollection?.doc(oktato.id).set(oktato);
@@ -29,13 +28,11 @@ export class OktatoService {
         return this.oktatok;
     }
 
-    // return type: AngularFirestoreCollection<oktato>
-    public deleteTrainer(oktato: oktato) {
+    public deleteTrainer(oktato: oktato): void {
         this.oktatoCollection?.doc(oktato.id).delete();
     }
 
-    // return type: AngularFirestoreCollection<oktato>
-    public updateTrainer(oktato: oktato) {
+    public updateTrainer(oktato: oktato): Promise<void> | undefined {
         return this.oktatoCollection?.doc(oktato.id).set(oktato);
     }
 

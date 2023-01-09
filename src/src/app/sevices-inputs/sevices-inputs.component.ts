@@ -88,8 +88,7 @@ export class SevicesInputsComponent implements OnInit {
         }
     }
 
-    // return type
-    public add_subject() {
+    public add_subject(): Promise<void> | undefined {
         if (this.timetable_sub?.length !== undefined) {
             for (let i = 0; i < this.timetable_sub?.length; i++) {
                 if (this.choosed.nev_sub === this.timetable_sub[i].nev_sub) {

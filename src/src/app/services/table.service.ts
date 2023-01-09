@@ -22,13 +22,11 @@ export class TableService {
         return this.timbetable_data;
     }
 
-    // return type: AngularFirestoreCollection<tantargy>
-    public addTimetable(tantargy: tantargy) {
+    public addTimetable(tantargy: tantargy): Promise<void> | undefined {
         return this.timetable?.doc(tantargy.id).set(tantargy);
     }
 
-    // return type: AngularFirestoreCollection<tantargy>
-    public deleteTimetable(tantargy: tantargy) {
+    public deleteTimetable(tantargy: tantargy): void {
         this.timetable?.doc(tantargy.id).delete();
     }
 

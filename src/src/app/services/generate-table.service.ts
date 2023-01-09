@@ -24,8 +24,7 @@ export class GenerateTableService {
         return this.timbetable_data;
     }
 
-    // return type: AngularFirestoreCollection<tantargy>
-    public addGeneralTable(tantargy: tantargy) {
+    public addGeneralTable(tantargy: tantargy): Promise<void> | undefined {
         return this.timetable?.doc(tantargy.id).set(tantargy);
     }
 
