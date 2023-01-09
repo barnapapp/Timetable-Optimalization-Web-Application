@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app';
 
 @Injectable({
     providedIn: 'root'
@@ -9,14 +10,17 @@ export class AuthService {
     private loggedIn = false;
     constructor(private readonly auth: AngularFireAuth) {}
 
-    // return type: Promise<firebase.auth.UserCredential>
-    public login(email: string, password: string) {
+    public login(
+        email: string,
+        password: string
+    ): Promise<firebase.auth.UserCredential> {
         this.loggedIn = true;
         return this.auth.signInWithEmailAndPassword(email, password);
     }
-
-    // return type: Promise<firebase.auth.UserCredential>
-    public signUp(email: string, password: string) {
+    public signUp(
+        email: string,
+        password: string
+    ): Promise<firebase.auth.UserCredential> {
         this.loggedIn = true;
         return this.auth.createUserWithEmailAndPassword(email, password);
     }

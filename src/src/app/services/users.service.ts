@@ -15,8 +15,7 @@ export class UsersService {
         this.maps = this.afs.collection('user-table').valueChanges();
     }
 
-    // return type
-    public addMap(user: string, map: object) {
+    public addMap(user: string, map: object): Promise<void> {
         return this.afs
             .collection<any>('user-table')
             .doc(user)
@@ -27,8 +26,7 @@ export class UsersService {
         return this.maps;
     }
 
-    // return type
-    public create(user: user) {
+    public create(user: user): Promise<void> {
         return this.afs.collection<user>('Users').doc(user.id).set(user);
     }
 
