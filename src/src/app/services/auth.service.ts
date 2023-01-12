@@ -14,7 +14,7 @@ export class AuthService {
         email: string,
         password: string
     ): Promise<firebase.auth.UserCredential> {
-        this.loggedIn = true;
+        // this.loggedIn = true;
         return this.auth.signInWithEmailAndPassword(email, password);
     }
     public signUp(
@@ -36,6 +36,11 @@ export class AuthService {
     }
 
     public isAuthenticated(): boolean {
+        if (sessionStorage.getItem('id') !== null) {
+            this.loggedIn = true;
+        } else {
+            this.loggedIn = false;
+        }
         return this.loggedIn;
     }
 }
